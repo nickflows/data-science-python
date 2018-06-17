@@ -1,0 +1,15 @@
+
+#random exercise to create a binomial distribution, and check to see the output value
+
+stuff = []
+
+stuff = np.random.binomial(20,0.5,10000)
+
+x = [i for i in stuff if i>=15]
+
+w = float(len(x)) / float(len(stuff))
+
+print(len(stuff))
+print(len(x))
+print(w)
+
