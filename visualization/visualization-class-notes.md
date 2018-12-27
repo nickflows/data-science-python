@@ -5,40 +5,37 @@
 * Backend is an abstraction layer, which renders matplotlib commands
 * Not all backends support all features
 
-# Artist Layers
+## Artist Layers
 * Abstraction around drawing and layoyt primatives
 * Primatives & Collections
 	* Base drawing items
 	* Collections end to end in the name "collection"
 
-- Scripting Layers
-	- Simplify and speed-up interaction w/ environment
-	- PyPlot is the backend we use
+## Scripting Layers
+* Simplify and speed-up interaction w/ environment
+* PyPlot is the backend we use for the class
 
 
-- Procedural 
-	- PyPlot is a procedural method
-	- Which drawing actions to take to render darta
+### Procedural 
+* PyPlot is a procedural method
+* Which drawing actions to take to render darta
 
-- Declarative methods
-	- Documents of model of relatinships
-	- DOM or Document Object model
-	- D3.JS is a declarive method
-
-
-
+### Declarative methods
+* Documents of model of relatinships
+* DOM or Document Object model
+* Example: D3.JS is a declarive method
 
 - Jupyter Notebooks uses the inline backend
 
 
-## Plotting 
+# Plotting 
 
 * Imports matplotlib `import matplotlib as mpl`
 * Importa matplotlib from pyplot `import matplotlib.pyplot as plt`
 * Plots a plot `plt.plot()`
 
 
-Scatter Plots
+## Scatter Plots
 	
 	Principles
 		- PyPlot keeps track of the axes objects
