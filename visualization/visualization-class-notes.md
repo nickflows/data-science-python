@@ -1,16 +1,15 @@
 ## Markup test
 
-Basic Charting - 
+# Basic Charting
 
-- Backend is an abstraction layer
-	- Renders matplotlib commands
-	- not all backends support all features
+* Backend is an abstraction layer, which renders matplotlib commands
+* Not all backends support all features
 
-- Artist Layers
-	- Abstraction around drawing and layoyt primatives
-	- Primatives & Collections
-		- Base drawing items
-		- Collections end to end in the name "collection"
+# Artist Layers
+* Abstraction around drawing and layoyt primatives
+* Primatives & Collections
+	* Base drawing items
+	* Collections end to end in the name "collection"
 
 - Scripting Layers
 	- Simplify and speed-up interaction w/ environment
