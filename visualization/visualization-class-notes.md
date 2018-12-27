@@ -31,11 +31,11 @@
 - Jupyter Notebooks uses the inline backend
 
 
-Plotting 
+## Plotting 
 
-	- import matplotlib as mpl
-	- import matplotlib.pyplot as plt
-	- plt.plot()
+* Imports matplotlib `import matplotlib as mpl`
+* Importa matplotlib from pyplot `import matplotlib.pyplot as plt`
+* Plots a plot `plt.plot()`
 
 
 Scatter Plots
@@ -53,15 +53,15 @@ Scatter Plots
 
 
 
-Dejunking a Chart (Example Chart):
-	import matplotlib.pyplot as plt
-	import numpy as np
+## Dejunking a Chart (Example Chart)
 
-	plt.figure()
+```import matplotlib.pyplot as plt
+import numpy as np
+plt.figure()```
 
-	languages =['Python', 'SQL', 'Java', 'C++', 'JavaScript']
-	pos = np.arange(len(languages))
-	popularity = [56, 39, 34, 34, 29]
+```languages =['Python', 'SQL', 'Java', 'C++', 'JavaScript']
+pos = np.arange(len(languages))
+popularity = [56, 39, 34, 34, 29]```
 
 	# change the bar color to be less bright blue
 	bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')
