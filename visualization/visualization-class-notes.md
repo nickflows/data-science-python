@@ -1,17 +1,19 @@
-## Markup test
 
-# Basic Charting
+
+## Week 1
+
+### Basic Charting
 
 * Backend is an abstraction layer, which renders matplotlib commands
 * Not all backends support all features
 
-## Artist Layers
+### Artist Layers
 * Abstraction around drawing and layoyt primatives
 * Primatives & Collections
 	* Base drawing items
 	* Collections end to end in the name "collection"
 
-## Scripting Layers
+### Scripting Layers
 * Simplify and speed-up interaction w/ environment
 * PyPlot is the backend we use for the class
 
@@ -28,64 +30,56 @@
 - Jupyter Notebooks uses the inline backend
 
 
-# Plotting 
+## Plotting 
 
 * Imports matplotlib `import matplotlib as mpl`
 * Importa matplotlib from pyplot `import matplotlib.pyplot as plt`
 * Plots a plot `plt.plot()`
 
 
-## Scatter Plots
+### Scatter Plots
 	
-	Principles
-		- PyPlot keeps track of the axes objects
-		- GCF - retrieves current figure
-		- GCA - retrieves current axes
+- *Principles*
+	1.PyPlot keeps track of the axes objects
+		- GCF: retrieves current figure
+		- GCA: retrieves current axes
 	2. PyPlot mirrors the underlying APIs
 	3. Function Declaration end with open set of keyword arguments
 
 
-	- Zip Method takes a list of numbers and creates tuples
-		- Use list function to show results of iterating over Zip
+- Zip Method takes a list of numbers and creates tuples
+	- Use list function to show results of iterating over Zip
 
 
 
-## Dejunking a Chart (Example Chart)
+### Dejunking a Chart (Example Chart)
 
-```import matplotlib.pyplot as plt
-import numpy as np
-plt.figure()```
+- Code example: 
+	- _import library_: `import matplotlib.pyplot as plt`
+	- _import library_: `import numpy as np`
+	- _plot figure_: `plt.figure()`
 
-```languages =['Python', 'SQL', 'Java', 'C++', 'JavaScript']
+languages =['Python', 'SQL', 'Java', 'C++', 'JavaScript']
 pos = np.arange(len(languages))
-popularity = [56, 39, 34, 34, 29]```
+popularity = [56, 39, 34, 34, 29]
 
-	# change the bar color to be less bright blue
-	bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')
-	# make one bar, the python bar, a contrasting color
-	bars[0].set_color('#1F77B4')
-
-	# soften all labels by turning grey
-	plt.xticks(pos, languages, alpha=0.8)
-	# remove the Y label since bars are directly labeled
-	#plt.ylabel('% Popularity', alpha=0.8)
-	plt.title('Top 5 Languages for Math & Data \nby % popularity on Stack Overflow', alpha=0.8)
-
-	# remove all the ticks (both axes), and tick labels on the Y axis
-	plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')
-
-	# remove the frame of the chart
-	for spine in plt.gca().spines.values():
-	    spine.set_visible(False)
+- _change the bar color to be less bright blue_: `bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')`
+- _make one bar, the python bar, a contrasting color:_ `bars[0].set_color('#1F77B4')`
+- _soften all labels by turning grey:_ `plt.xticks(pos, languages, alpha=0.8)`
+- _remove the Y label since bars are directly labeled:_ `plt.ylabel('% Popularity', alpha=0.8)`
+	- `plt.title('Top 5 Languages for Math & Data \nby % popularity on Stack Overflow', alpha=0.8)`
+_ _remove all the ticks (both axes), and tick labels on the Y axis:_ `plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')`
+- _remove the frame of the chart_: 
+	`for spine in plt.gca().spines.values(): spine.set_visible(False)`
 	    
-	# direct label each bar with Y axis values
-	for bar in bars:
-	    plt.gca().text(bar.get_x() + bar.get_width()/2, bar.get_height() - 5, str(int(bar.get_height())) + '%', 
-	                 ha='center', color='w', fontsize=11)
-	plt.show()
+- _direct label each bar with Y axis values:_
+	-`for bar in bars:
+	    `plt.gca().text(bar.get_x() + bar.get_width()/2, bar.get_height() - 5, str(int(bar.get_height())) + '%',`
+	                 `ha='center', color='w', fontsize=11)`
+	`plt.show()`
 
 
-Week 3 - Lessons
+## Week 3 - Lessons
 
 - SubPlots
 	- Mailing list for developers and users (most focus on users)
