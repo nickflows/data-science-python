@@ -59,11 +59,6 @@
 	- import library: `import numpy as np`
 	- plot figure: `plt.figure()`
 
-```
-languages =['Python', 'SQL', 'Java', 'C++', 'JavaScript']
-pos = np.arange(len(languages))
-popularity = [56, 39, 34, 34, 29]
-```
 - change the bar color to be less bright blue:
 ```
 bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')
@@ -89,8 +84,9 @@ plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off
 ```
 for bar in bars:
 	plt.gca().text(bar.get_x() + bar.get_width()/2, bar.get_height() - 5, str(int(bar.get_height())) + '%', ha='center', 	color='w', fontsize=11)
+
+plt.show()
 ```
-`plt.show()`
 
 ## Week 3 - Lessons
 
@@ -103,9 +99,6 @@ for bar in bars:
 
 - plot the linear_data on the 5th subplot axes 
 `ax5.plot(linear_data, '-')`
-
-
-
 
 
 ## Week 4 - Plotting w/ Pandas and Seaborn
