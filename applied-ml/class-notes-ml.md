@@ -48,28 +48,30 @@
 
 
 - plotting a 3D scatter plot
-`from mpl_toolkits.mplot3d import Axes3D`
-
-`fig = plt.figure()
-ax = fig.add_subplot(111, projection = '3d')
-ax.scatter(X_train['width'], X_train['height'], X_train['color_score'], c = y_train, marker = 'o', s=100)
-ax.set_xlabel('width')
-ax.set_ylabel('height')
-ax.set_zlabel('color_score')
-plt.show()`
+	-_Import plotting library:_ `from mpl_toolkits.mplot3d import Axes3D`
+-_plot 3d figure using a scatter plot:_
+	`fig = plt.figure()
+	ax = fig.add_subplot(111, projection = '3d')
+	ax.scatter(X_train['width'], X_train['height'], X_train['color_score'], c = y_train, marker = 'o', s=100)
+	ax.set_xlabel('width')
+	ax.set_ylabel('height')
+	ax.set_zlabel('color_score')
+	plt.show()`
 
 
 ### K-Nearest Neighbors
-	- KNN Classifiers - Memory / Instance Based Supervised Learning
-		- Memorization of labels in training set
-	- "K" represents the number of nearest neighbors it will retrieve and use to make its prediction
-	- Three Steps
-		- Find the most similar instances of X that was in the training set
-		- Get those labels for the similar instances in the training set
-		- Combine the labels to make a prediction for X (e.g. simple majority vote)
-	- A nearest Neighbor algorithm needs four things
-		- A distance metric (e.g. Euclidean Distance)
-		- How many nearest neighbors to use (K)
-		- Optional weighting function on the neighbor points
-		- Aggregation method for nearest neighbor points
+
+- KNN Classifiers - Memory / Instance Based Supervised Learning
+	- Memorization of labels in training set
+- "K" represents the number of nearest neighbors it will retrieve and use to make its prediction
+- Three Steps to nearest neighbor algorithm
+	- Find the most similar instances of X that was in the training set
+	- Get those labels for the similar instances in the training set
+	- Combine the labels to make a prediction for X (e.g. simple majority vote)
+- A nearest Neighbor algorithm needs four things (four requirements for KNN algorithm)
+	- A distance metric (e.g. Euclidean Distance)
+	- How many nearest neighbors to use (K)
+	- Optional weighting function on the neighbor points
+	- Aggregation method for nearest neighbor points
 		
+## Week 2
