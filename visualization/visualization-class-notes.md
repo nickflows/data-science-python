@@ -74,7 +74,9 @@ popularity = [56, 39, 34, 34, 29]
 	- `plt.title('Top 5 Languages for Math & Data \nby % popularity on Stack Overflow', alpha=0.8)`
 	
 _ _remove all the ticks (both axes), and tick labels on the Y axis:_ 
-	- `plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')`
+```
+plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')
+```
 	
 - _remove the frame of the chart_: 
 	- `for spine in plt.gca().spines.values(): spine.set_visible(False)`
@@ -83,9 +85,8 @@ _ _remove all the ticks (both axes), and tick labels on the Y axis:_
 ```
 for bar in bars:
 	plt.gca().text(bar.get_x() + bar.get_width()/2, bar.get_height() - 5, str(int(bar.get_height())) + '%', ha='center', 	color='w', fontsize=11)
-
-`plt.show()`
 ```
+`plt.show()`
 
 ## Week 3 - Lessons
 
