@@ -26,31 +26,34 @@
 	- quality or accuracy score
 - Optimization: Searching for the best parameters and settings in a model
 
+### Code Snippets
 
-- Creating a training and test set
-	- X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+
+- Creating a training and test set `X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)`
+	- Create 4 variables and splits the data into training and test
 
 - Training Data Visualization
 	- Range of values (find outliers or noise in the dataset)
 	- Determine likelihood that a machine learning algo can classify dataset (how well clustered are the datasets)
 		- Looking at feature space
-	- "Feature-pair plot" Code Snippet 
-		- cmap = cm.get_cmap('gnuplot')
-		- scatter = pd.scatter_matrix(X_train, c= y_train, marker = 'o', s=40, hist_kwds={'bins':15}, figsize=(9,9), cmap=cmap)
-		- Shows how the features are correlated or not
-		- Useful for smaller datasets
+
+- "Feature-pair plot" Code Snippet 
+	- Shows how the features are correlated or not
+	- Useful for smaller datasets
+	- `cmap = cm.get_cmap('gnuplot')`
+	- `scatter = pd.scatter_matrix(X_train, c= y_train, marker = 'o', s=40, hist_kwds={'bins':15}, figsize=(9,9), cmap=cmap)`
 
 
-# plotting a 3D scatter plot
-from mpl_toolkits.mplot3d import Axes3D
+- plotting a 3D scatter plot
+`from mpl_toolkits.mplot3d import Axes3D`
 
-fig = plt.figure()
+`fig = plt.figure()
 ax = fig.add_subplot(111, projection = '3d')
 ax.scatter(X_train['width'], X_train['height'], X_train['color_score'], c = y_train, marker = 'o', s=100)
 ax.set_xlabel('width')
 ax.set_ylabel('height')
 ax.set_zlabel('color_score')
-plt.show()
+plt.show()`
 
 
 
