@@ -2,26 +2,29 @@
 
 ## Week 1 
 
-###Supervised Learning: Learn to predict target values with label data
+### Supervised Learning: Learn to predict target values with label data
+
 - Classification: Target values are discrete (learn a classifier function)
 - Regression: Target values are continuous (learn a regression function)
+- Label Data:
+	- Explicit Data (e.g. hand-labeled by a human)
+	- Implicit Data (e.g. clicks)
 
 
 
 ### Unsupervised Learning: Find structure in unlabeled data
-	- Find groups or clusters of data (clustering)
-	- Finding unusual patterns (outlier detection)
-  
-  
- ### Label Data
-	- Explicit Data (e.g. hand-labeled by a human)
 
-- A basic machine learning workflow (Classification as an example)
-	- Representation: Choose a feature representation and a model to use
-		- Input to the learning function
-	- Evaluation: What criteria and metrics distinguish a good performing classfier from a bad performing one?
-		- quality or accuracy score
-	- Optimization: Searching for the best parameters and settings in a model
+- Find groups or clusters of data (clustering)
+- Finding unusual patterns (outlier detection)
+  
+
+### A basic machine learning workflow (Classification as an example)
+
+- Representation: Choose a feature representation and a model to use
+	- Input to the learning function
+- Evaluation: What criteria and metrics distinguish a good performing classfier from a bad performing one?
+	- quality or accuracy score
+- Optimization: Searching for the best parameters and settings in a model
 
 
 - Creating a training and test set
