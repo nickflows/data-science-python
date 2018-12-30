@@ -29,7 +29,10 @@
 ### Code Snippets
 
 
-- Creating a training and test set `X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)`
+- Creating a training and test set:
+	- _import library:_ `from sklearn.model_selection import train_test_split`
+	- _create tuples:_ `lookup_fruit_name = dict(zip(fruits.fruit_label.unique(), fruits.fruit_name.unique()))`
+	- _create dataset:_ `X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)`
 	- Create 4 variables and splits the data into training and test
 
 - Training Data Visualization
@@ -56,16 +59,7 @@ ax.set_zlabel('color_score')
 plt.show()`
 
 
-
-
-- Useful code examples:
-	- from sklearn.model_selection import train_test_split
-		# import model selection from sklearn
-	- lookup_fruit_name = dict(zip(fruits.fruit_label.unique(), fruits.fruit_name.unique()))   
-		# 
-	- 
-
-- K-Nearest Neighbors
+### K-Nearest Neighbors
 	- KNN Classifiers - Memory / Instance Based Supervised Learning
 		- Memorization of labels in training set
 	- "K" represents the number of nearest neighbors it will retrieve and use to make its prediction
@@ -79,8 +73,3 @@ plt.show()`
 		- Optional weighting function on the neighbor points
 		- Aggregation method for nearest neighbor points
 		
-
-
-
-
-
