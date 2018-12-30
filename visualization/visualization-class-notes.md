@@ -1,6 +1,6 @@
 
 
-## Week 1
+## Week 1: Introduction
 
 ### Basic Charting
 
@@ -30,7 +30,7 @@
 - Jupyter Notebooks uses the inline backend
 
 
-## Plotting 
+## Week 2 - Plotting Libraries
 
 * Imports matplotlib `import matplotlib as mpl`
 * Importa matplotlib from pyplot `import matplotlib.pyplot as plt`
@@ -64,20 +64,28 @@ pos = np.arange(len(languages))
 popularity = [56, 39, 34, 34, 29]
 
 - _change the bar color to be less bright blue_: `bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')`
+
 - _make one bar, the python bar, a contrasting color:_ `bars[0].set_color('#1F77B4')`
+
 - _soften all labels by turning grey:_ `plt.xticks(pos, languages, alpha=0.8)`
-- _remove the Y label since bars are directly labeled:_ `plt.ylabel('% Popularity', alpha=0.8)`
+
+- _remove the Y label since bars are directly labeled:_ 
+	- `plt.ylabel('% Popularity', alpha=0.8)`
 	- `plt.title('Top 5 Languages for Math & Data \nby % popularity on Stack Overflow', alpha=0.8)`
-_ _remove all the ticks (both axes), and tick labels on the Y axis:_ `plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')`
+	
+_ _remove all the ticks (both axes), and tick labels on the Y axis:_ 
+	- `plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')`
+	
 - _remove the frame of the chart_: 
-	`for spine in plt.gca().spines.values(): spine.set_visible(False)`
+	- `for spine in plt.gca().spines.values(): spine.set_visible(False)`
 	    
 - _direct label each bar with Y axis values:_
-	-`for bar in bars:
-	    `plt.gca().text(bar.get_x() + bar.get_width()/2, bar.get_height() - 5, str(int(bar.get_height())) + '%',`
-	                 `ha='center', color='w', fontsize=11)`
-	`plt.show()`
+```
+for bar in bars:
+	plt.gca().text(bar.get_x() + bar.get_width()/2, bar.get_height() - 5, str(int(bar.get_height())) + '%', ha='center', 	color='w', fontsize=11)
 
+`plt.show()`
+```
 
 ## Week 3 - Lessons
 
@@ -94,17 +102,14 @@ ax5.plot(linear_data, '-')
 
 
 
-Week 4 - Plotting w/ Pandas and Seaborn
+## Week 4 - Plotting w/ Pandas and Seaborn
 
-- Plotting in Pandas
-	- df.plot(); ##plots a dataframe as a line graph
-	- df.plot('A','B', kind = 'scatter'); #plots a scartter plot. Kind can be set as a number of parameters, including 'line', 'bar', 'hist', 'box', 'scatter','area','pie'
+- *Plotting in Pandas*
+	- _plots a dataframe as a line graph_ `df.plot();`
+	- _plots a scartter plot. Kind can be set as a number of parameters, including:_  *df.plot('A','B', kind = 'scatter');
+	- _options:_ `'line', 'bar', 'hist', 'box', 'scatter','area','pie'`
 	
-
-
-
-
-- Seaborn
+- *Seaborn*
 
 
 
