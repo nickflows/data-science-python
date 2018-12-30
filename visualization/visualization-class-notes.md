@@ -54,34 +54,38 @@
 
 ### Dejunking a Chart (Example Chart)
 
-- Code example: 
-	- _import library_: `import matplotlib.pyplot as plt`
-	- _import library_: `import numpy as np`
-	- _plot figure_: `plt.figure()`
+- Code examples (importing librarties): 
+	- import library: `import matplotlib.pyplot as plt`
+	- import library: `import numpy as np`
+	- plot figure: `plt.figure()`
 
+```
 languages =['Python', 'SQL', 'Java', 'C++', 'JavaScript']
 pos = np.arange(len(languages))
 popularity = [56, 39, 34, 34, 29]
+```
+- change the bar color to be less bright blue:
+```
+bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')
+```
 
-- _change the bar color to be less bright blue_: `bars = plt.bar(pos, popularity, align='center', linewidth=0, color='lightslategrey')`
+- make one bar, the python bar, a contrasting color: `bars[0].set_color('#1F77B4')`
 
-- _make one bar, the python bar, a contrasting color:_ `bars[0].set_color('#1F77B4')`
+- soften all labels by turning grey: `plt.xticks(pos, languages, alpha=0.8)`
 
-- _soften all labels by turning grey:_ `plt.xticks(pos, languages, alpha=0.8)`
-
-- _remove the Y label since bars are directly labeled:_ 
+- remove the Y label since bars are directly labeled: 
 	- `plt.ylabel('% Popularity', alpha=0.8)`
 	- `plt.title('Top 5 Languages for Math & Data \nby % popularity on Stack Overflow', alpha=0.8)`
 	
-_ _remove all the ticks (both axes), and tick labels on the Y axis:_ 
+_ remove all the ticks (both axes), and tick labels on the Y axis: 
 ```
 plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')
 ```
 	
-- _remove the frame of the chart_: 
+- remove the frame of the chart: 
 	- `for spine in plt.gca().spines.values(): spine.set_visible(False)`
 	    
-- _direct label each bar with Y axis values:_
+- direct label each bar with Y axis values:
 ```
 for bar in bars:
 	plt.gca().text(bar.get_x() + bar.get_width()/2, bar.get_height() - 5, str(int(bar.get_height())) + '%', ha='center', 	color='w', fontsize=11)
@@ -92,12 +96,13 @@ for bar in bars:
 
 - SubPlots
 	- Mailing list for developers and users (most focus on users)
-	- plt.subplot(<rows>,<columns>,<currentaxis>)
+	- `plt.subplot(<rows>,<columns>,<currentaxis>)`
 
-# create a 3x3 grid of subplots
-fig, ((ax1,ax2,ax3), (ax4,ax5,ax6), (ax7,ax8,ax9)) = plt.subplots(3, 3, sharex=True, sharey=True)
-# plot the linear_data on the 5th subplot axes 
-ax5.plot(linear_data, '-')
+- create a 3x3 grid of subplots:
+`fig, ((ax1,ax2,ax3), (ax4,ax5,ax6), (ax7,ax8,ax9)) = plt.subplots(3, 3, sharex=True, sharey=True)`
+
+- plot the linear_data on the 5th subplot axes 
+`ax5.plot(linear_data, '-')`
 
 
 
