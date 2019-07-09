@@ -73,5 +73,9 @@
 	- How many nearest neighbors to use (K)
 	- Optional weighting function on the neighbor points
 	- Aggregation method for nearest neighbor points
+	
+#### Code for KNN Classifier
+
+_import library_ `from sklearn.neighbors import KNeighborsClassifier`
 		
 ## Week 2
