@@ -65,7 +65,7 @@
 	- Memorization of labels in training set
 - "K" represents the number of nearest neighbors it will retrieve and use to make its prediction
 - Three Steps to nearest neighbor algorithm
-	- Find the "K" most similar instances of X that was in the training set
+	- Find the `K` most similar instances of X that was in the training set
 	- Get those labels for the similar instances in the training set
 	- Combine the labels to make a prediction for X (e.g. simple majority vote)
 - A nearest Neighbor algorithm needs four things (four requirements for KNN algorithm)
