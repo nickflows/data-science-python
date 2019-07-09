@@ -76,6 +76,10 @@
 	
 #### Code for KNN Classifier
 
-_import library_ `from sklearn.neighbors import KNeighborsClassifier`
+- _import library_ `from sklearn.neighbors import KNeighborsClassifier`
+- _assign classifier object to a variable:_ `knn = KNeighborsClassifier(n_neighbors = 1)`
+- _fit the model to a train and test dataset:_ `knn.fit(X_train, y_train)`
+- _predict values on a test dataset_ `knn.predict(X_test)`
+- _produce accuracy score on test data:_ `knn.score(X_test, y_test)`
 		
 ## Week 2
