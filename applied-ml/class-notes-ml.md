@@ -82,4 +82,153 @@
 - _predict values on a test dataset_ `knn.predict(X_test)`
 - _produce accuracy score on test data:_ `knn.score(X_test, y_test)`
 		
-## Week 2
+## Week 2 - Introduction to Supervised Machine Learning
+
+### Classificaton & Regression
+
+
+Both classification and regressiong take a set of training instances (values) and learn a mapping to a target value
+- for classification, the target value is a discrete class value
+-- Binary classification: two classes, a "negative class" and "positive class"
+-- Multi-class: target value is a set of discrete values
+-- Multi-label classification: multiple target values (training labels)
+
+For Regression, the target value is continuous (floating point / real-valued)
+- Example: predicting the price for a house
+
+
+
+Focus on two types of algorithms:
+- K-nearest neighbors: makes few assumptions about the structure of the data, and give potentially accurate but sometimes unstable results.
+- Linear model fit using least-squares: makes strong assumptions about the structure of data, and gives stable but potentially inaccurate results.
+
+
+### Generalization, Overfitting, and Underfitting
+
+- Generalization - algorithm's ability to give accurate predictions for new, previously unseen data
+- Assumptions
+  -- Future unseen data (test set) will have the same properties as the current training sets (drawn from the same population)
+
+
+- Models that are too complex for the amount of training data available are said to "overfit" and are not likely to generalize to new examples
+- Models that are too simple, that don't even do well on the training data, are said to underfit and also not likely to generalize well
+
+
+
+### K-Nearest Neighbors: Classification & Regression
+
+Classification: Given a training set X_Train withb labels y_train, and given a new instance x_test to be classified:
+
+1. Find the most similar instances (X_NN) to x_test that are in X_train
+2. Get the labels for y_NN for the instances in X_NN
+3. Predict the label for x_test by combining the labels y_NN (e.g. majority vote)
+
+
+
+Regression: The R^2 (R-squared) regression score:
+- Measures how well a prediction model for regression fits the given data
+- The score is between 0 and 1
+	- A value of 0 corresponds to a constant prediction of the mean value of all the training targets
+	- A value of 1 corresponds to a perfect prediction
+
+
+Model Complexity:
+ - `n_neighbors`: - number of nearest neighbors (k)
+
+Model Ftting:
+- `metric`: distance function between points (note: default euclidean setting works well for most datasets)
+
+
+### Linear Models
+
+#### Linear Regression
+
+- Definition: a linear model is a sum of weighted variables that predicts a target output value given an input instance (e.g. predicting housing prices)
+- input instance - feature vector: x = {x0, x1, ... , xn}
+- Predicted Output - y = w0x0 + w1x1 + ... + wnxn + b
+- Parameters to estimate:
+	- w(hat) = (w0, ..., wn)
+	- b(hat) = bias term or intercept
+
+Definition: Ordinary Least Squares
+- Finds the w and b that minimizes the mean squared error of the model (i.e. the sum of the squared differences b/w target and actual values)
+- No parameters to control model complexity (except # of features)
+- Finds the values of w and b that minimizes the sum of squared differences (RSS or residual sum of squares) b/w predicted and actual values (ALA mean square error)
+
+The learning algorithm finds the parameters (w, b) that optimize an objective function, typically to minimize some kind of loss function of the predicted values vs actual values.
+
+Note: underscores indicate values that were learned from training data (not set by the user)
+
+Code Snippet
+```
+from sklearn.linear_model import LinearRegression
+X_train, X_test, y_train, y_test = train_test_split(X_R1, y_R1,random_state = 0)
+linreg = LinearRegression().fit(X_train, y_train)
+linreg.intercept_
+linreg.coef_
+```
+
+
+#### Ridge Regression
+
+- Ridge regression learns w, b using the same least-squares criterion but adds a penalty for large variations in w parameters
+- The addition of a parameter penalty is called "regularization". Regularization prevents overfitting by restricting the model, typically to reduce complexity.
+- Ridge regression uses L2 Regularization: minimize sum of squyares of w entries
+- The influence of the regularization term is controlled by the alpha parameter. Higher alpha means more regularization and simplier models.
+
+Code Snippet
+```
+from sklearn.linear_model import Ridge
+linridge = Ridge(alpha=20.0).fit(X_train, y_train)
+```
+
+
+#### Feature Normalization
+
+- Important for some ML models that are features are on the same scale (e.g. regularized regression, k-NN, SVMs, NNs)
+- One example of feature normalization includes MinMax:
+	- For each feature xi: compute the min value xi(min) anbd the max value xi(max) acheived across all instances in the training set
+	- For each feature: transform a given feature xi value to a scaled version using the xi' formula: x' = (xi - xi(min)) / (xi(max)-xi(min))
+		- essentially, put everything for values between 0 and 1
+
+- Rules for Feature Normalization: The test set must use idebntical scaling to the training set
+	- Fit the scaler using the training set, then apply the same scaler to transofrm the test set
+	- Do not scale the training set and test sets using different scalers: this could lead to random skew in data
+	- Do not fit the scaler using any part of the test set
+
+Code Snippet
+```
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+x_train_scaled = scaler.fit_transform(X_train)
+```
+
+
+#### Lasso Regression
+
+- Lasso regression is another form of regylarized linbear regression that uses an L1 regularization penalty for training (instead of L2 for Ridge)
+- L1 Penalty: minimize the sum of the absolute values of the coefficient
+- This has the effect of setting parameter weights in w to zero for the least influential variables. This is called a sparse solution, a kind of feature selection.
+- Trade off between L1 and L2 Regularization:
+	- L2/Ridge: Better for many small or medium sized effects
+	- L1/Lasso: Only a few variables with medium/large effects
+
+
+#### Polynomial Features w/ Linear Regression
+
+- Generate new features consiting of all polynomial combinations of the original two featues (x0, x1)
+- The degree of the polynomial specifies how many variables participate at a time in each new feature
+- This is still a weighted linear combination of features, so it is still a linear model and can uses the same OLS approach
+
+- Captures interactions between the original features by adding them as features to the linear model
+- More generally, we can apply other non-linear transformations to create new features
+- Beware of polynomial feature expansion with high degree, as this can lead to complex models that overfit
+
+```
+from sklearn.preprocessing import PolynomialFeatures
+poly = PolynomialFeatures(degree=2)
+X_F1_poly = poly.fit_transform(X_F1)
+```
+
