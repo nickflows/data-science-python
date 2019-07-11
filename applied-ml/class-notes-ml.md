@@ -232,3 +232,130 @@ poly = PolynomialFeatures(degree=2)
 X_F1_poly = poly.fit_transform(X_F1)
 ```
 
+
+#### Logistic Regression
+
+- Y(hat) = logistic (b +w1x1 + ... wn xn )= 1 / 1 + exp[-(b +w1x1 + ... wn xn )]
+- Predictions are always between 0 and 1
+- The logistic function transforms real-valued input to an output number y between 0 and 1. This output can be interpreted as the probability the input object belongs to the positive class given the input features.
+- Parameters for Logistic Regresstion
+	- L2 regularization is on by default (like ridge regression)
+	- Parmaeter C controls the amount of regularization (default is 1)
+	- It can be important to normalize all features so they're on the same scale
+
+
+```
+from sklearn.linear_model import LogisticRegression
+LogisticRegression(C=100).fit(X_train, y_train)
+```
+
+### Support Vector Machines
+
+- f(x,w,b) = sign (w * x + b) = sign sum (w[i]x[i]+b)
+- Dot Product: W * X = (w1, w2) * (x1, x2) = w1x1 + w2x2
+
+- Classifier Margin - Defined as the maximum width the decision boundary area can be increased before hitting a data point.
+- Maximum Classifier Margin - The linear classifier with the maximum margin is a linear support vector machine (LSVM)
+- The strength of the regularization is determined by C:
+	- Larger values of C: less regularization
+	- Smaller values of C: more regularization
+
+
+```
+from sklearn.svm import SVC
+this_C = 1.0
+clf = SVC(kernel = 'linear', C=this_C).fit(X_train, y_train)
+```
+
+```
+from sklearn.svm import LinearSVC
+X_train, X_test, y_train, y_test = train_test_split(X_cancer, y_cancer, random_state = 0)
+clf = LinearSVC().fit(X_train, y_train)
+```
+
+
+#### Multi-Class Classification
+
+- For Multi-class, Sci-Kit learn automatically detects multiple classes. It then treats this as N number of binary classification problems, and produces binary classifiers for each class.
+- 
+
+#### Kernalized Support Vector Machines
+
+- Extension of Linear Support Vector Machines (LSVMs).
+- Kernalized Support Vector Machines (SVMs) go beyond the linear case, and can work for both regression and classificatiion.
+- Kernalized take original input space and transform it to a higher dimensional feature space, where it becomes easier to classify the transformed data using a linear classifier.
+	- Example: transform the data by adding a 2nd dimension/feature. vi = (xi, xi^2)
+
+
+Definition: a kernal is a similarity measure (modified dot product) between data points
+
+
+Definition: Radio Basis Function (RBF) Kernal
+- K (x, x') = exp [ - y * || x - x'||^2]
+
+
+Model Complexity:
+- Kernal: type of kernal function to be used
+- Kernal Parameters:
+	- gamma: RBF kernal width
+- C: Regularization parameter
+
+
+
+Polynomial Kernal Code Snippet
+
+```
+from sklearn.svm import SVC
+SVC(kernel = 'poly', degree = 3).fit(X_train, y_train)
+```
+
+### Cross Validation
+
+Code Snippet for Cross-Validation
+```
+from sklearn.model_selection import cross_val_score
+clf = KNeighborsClassifier(n_neighbors = 5)
+cv_scores = cross_val_score(clf, X, y)
+```
+
+
+Validation Curves show sensitivity to changes in an important parameter
+
+```
+from sklearn.svm import SVC
+from sklearn.model_selection import validation_curve
+
+param_range = np.logspace(-3, 3, 4)
+train_scores, test_scores = validation_curve(SVC(), X, y,
+                                            param_name='gamma',
+                                            param_range=param_range, cv=3)
+```
+
+### Decision Trees
+
+
+Decision Tree Splits - Rules to split data into 2 groups.
+
+Informativeness of Splits - an informative split is one that does a good job of splitting the classes. There are a number of mathematical ways to compute the effectiveness (e.g. information gain).
+
+Parameters for Decision Trees
+	- Pre-Pruning: Prevent the tree from becoming overly complex
+		- `max_depth` - controls maximium depth (number of splits) in the tree
+		- `max_leaf_nodes` - max # of leaf nodes
+		- `min_samples_leaf` - minimum # of instances that is in a node before splitting further
+	- Post-Pruning: Prune back the tree after it has been formed. This is not supported in scikitlearn
+
+
+```
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+clf = DecisionTreeClassifier().fit(X_train, y_train)
+```
+
+Feature Importance
+- Can be used to determine which of the features are most relevant to classifying the data
+
+```clf.feature_importances_
+```
+
+
