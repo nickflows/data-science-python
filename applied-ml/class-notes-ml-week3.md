@@ -57,20 +57,21 @@ confusion = confusion_matrix(y_test, y_majority_predicted)
 ```
 
 ### Other Evaluation Metrics
-# Accuracy = TP + TN / (TP + TN + FP + FN)
-# Classification Error = 1 - accuracy
-# Precision = TP / (TP + FP)
+
+- Accuracy = TP + TN / (TP + TN + FP + FN)
+- Classification Error = 1 - accuracy
+- Precision = TP / (TP + FP)
 	- What % of positive instances are correct?
-# Recall (AKA Trye Positive Rate) = TP / (TP + FN)
+- Recall (AKA Trye Positive Rate) = TP / (TP + FN)
 	- what % of all positive instances did the classifier correctly identify as positive?
 
-# Specificity (False Positive Rate) = FP / (TN + FP)
+- Specificity (False Positive Rate) = FP / (TN + FP)
 	- What % of all negative instances does the classifier incorrectly identify as positive?
 
-# F1 = 2 * Precision * Recall / (Precision + Recall) 
+- F1 = 2 * Precision * Recall / (Precision + Recall) 
 	- Combines precision and recall into a single number (harmonic mean)
 
-# F Score - (1+B^2) * (precision * recall ) /(B^2 * precision + recall)
+- F Score - (1+B^2) * (precision * recall ) /(B^2 * precision + recall)
 	- B allows for the adjustment of control between precision and recall
 	- Precision Goal: set B=0.5 (false positives hurt performance more than false negatives)
 	- Recall Goal: set B = 2 (False negatives hurt performanfce more than false positives)
@@ -159,9 +160,6 @@ print(classification_report(y_test_mc, svm_predicted_mc))
 
 `parameter: average=micro`
 
-
-
-
 ### Regression Evaluation Metrics
 
 	- r2_score -- usually the best for most cases
@@ -169,16 +167,12 @@ print(classification_report(y_test_mc, svm_predicted_mc))
 	- mean_absolute_error - absolute difference between target and predicted values 
 	- median_absolute_error - robust to outliers
 
-
-
 ### Model Selection using Evaluation Metrics
-
 
 Three Approaches to evaluating a model
 	1. train / test on the same data
 	2. Single train/test split
 	3. K-Fold Cross Validation
-
 
 Cross-Validation Code Snippet
 
@@ -186,7 +180,6 @@ Cross-Validation Code Snippet
 from sklearn.model_selection import cross_val_score
 cross_val_score(clf, X, y, cv=5, scoring = 'roc_auc')
 ```
-
 
 Grid Search
 
