@@ -159,10 +159,10 @@ print(classification_report(y_test_mc, svm_predicted_mc))
 
 ### Regression Evaluation Metrics
 
-	- r2_score -- usually the best for most cases
-	- mean_squared_error - squared difference between target and predicted values
-	- mean_absolute_error - absolute difference between target and predicted values 
-	- median_absolute_error - robust to outliers
+- r2_score -- usually the best for most cases
+- mean_squared_error - squared difference between target and predicted values
+- mean_absolute_error - absolute difference between target and predicted values 
+- median_absolute_error - robust to outliers
 
 ### Model Selection using Evaluation Metrics
 
