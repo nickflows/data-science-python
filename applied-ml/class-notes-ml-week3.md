@@ -1,33 +1,33 @@
 ## Week 3 - Model Evaluation and Selection
 
 
-###Evaluation Metrics
+### Evaluation Metrics
 	- Choose evaluation metric based on context
 	- Compute your evaluation metrics for multiple models
 
-###Accuracy w/ Imbalanced Classes
+### Accuracy w/ Imbalanced Classes
 
-	- Suppose you have 2 classes: Relevant Class (Positive) and Not Relevant (Negative)
-	- Out of 1000 items, on average, 1 is the positive class
-	- Accuracy = Correct Predictions / Total Instances
+- Suppose you have 2 classes: Relevant Class (Positive) and Not Relevant (Negative)
+- Out of 1000 items, on average, 1 is the positive class
+- Accuracy = Correct Predictions / Total Instances
 
 
 
 ### Dummy Classifier
 
-	- Completely ignore the input data
-	- Can be used as a sanity check on imbalanced datasets for trained classifiers
-	- They provide a "null metric" baseline 
-	- Commonly used strategies for Dummy Classifiers:
-		- stratified: random predictions based on training set class distribution
-		- uniform: generates predicitions uniformly at random
-		- most_frequent: predicts the most frequent label in the training set 
-		- constant: always predicts a constant label provided by a user
+- Completely ignore the input data
+- Can be used as a sanity check on imbalanced datasets for trained classifiers
+- They provide a "null metric" baseline 
+- Commonly used strategies for Dummy Classifiers:
+	- stratified: random predictions based on training set class distribution
+	- uniform: generates predicitions uniformly at random
+	- most_frequent: predicts the most frequent label in the training set 
+	- constant: always predicts a constant label provided by a user
 
-	- What does it mean if accuracy is close to dummy baseline?
-		- Wrong parameters
-		- Poorly formed features
-		- Class imbalance
+- What does it mean if accuracy is close to dummy baseline?
+	- Wrong parameters
+	- Poorly formed features
+	- Class imbalance
 
 ```
 from sklearn.dummy import DummyClassifier
@@ -36,17 +36,18 @@ y_dummy_predictions = dummy_majority.predict(X_test)
 ```
 
 ### Dummy Regressors
-	- strategy parameter options
-		- mean
-		- median
-		- quantile
-		- constant
+- strategy parameter options
+	- mean
+	- median
+	- quantile
+	- constant
 
 
 ### Confusion Matrix
-	- Each test instance is in exactly one box (MECE)
 
-				Predicted Negative   Predicted Positive
+- Each test instance is in exactly one box (MECE)
+
+	Predicted Negative   Predicted Positive
 True Negative
 True Positive
 
@@ -103,19 +104,16 @@ Code Snippet
 ```
 ```
 
-
-
 ### Precision & Recall Curves
 
-	- Shows the trade-off between precision and recall for different decision thresholds
-	- Optimal point (top right where both values are equal to 1)
-		-
+- Shows the trade-off between precision and recall for different decision thresholds
+- Optimal point (top right where both values are equal to 1)
 
 
 #### Precision vs Recall Trade-off
-	- Increasing the recall of the classifier comes at the cost of precision (and vice versa)
-	- Recall - optimize for correctly identifying positive examples
-	- Precision - optimize for not showing incorrect or unhelpful information (e.g. search engine ranking, annotations)
+- Increasing the recall of the classifier comes at the cost of precision (and vice versa)
+- Recall - optimize for correctly identifying positive examples
+- Precision - optimize for not showing incorrect or unhelpful information (e.g. search engine ranking, annotations)
 
 
 ```
@@ -137,9 +135,9 @@ roc_auc_lr = auc(fpr_lr, tpr_lr)
 
 ### Multi-Class Evaluation
 
-	- Multi-class evaluation is an extension of evaluation for the binary class case
-	- Overall, evaluation metrics are averages across classes (also, imbalanced classes are important to consider)
-	- 
+- Multi-class evaluation is an extension of evaluation for the binary class case
+- Overall, evaluation metrics are averages across classes (also, imbalanced classes are important to consider)
+
 
 ```
 confusion_mc = confusion_matrix(y_test_mc, svm_predicted_mc)
@@ -148,7 +146,6 @@ df_cm = pd.DataFrame(confusion_mc,
 
 print(classification_report(y_test_mc, svm_predicted_mc))
 ```
-
 
 - Micro-average precision: Each instance has equal weight
 	1. Aggregate outcomes across all classes
