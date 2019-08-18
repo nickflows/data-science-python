@@ -1,4 +1,4 @@
-Week 4 - Supervised Machine Learning, Part II
+# Week 4 - Supervised Machine Learning, Part II
 
 
 ## Naive Bayes Classifiers
@@ -159,12 +159,3 @@ Multi-layer Perceptron w/ Regularization (`alpha` parameter)
 ```   
 
 `solver` - parmater for algorithm to find the optimal weights. 
-
-
-
-
-
-
-
-
-
