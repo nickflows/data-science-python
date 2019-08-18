@@ -1,5 +1,6 @@
 # data-science-python
-Coursera Data Science courses.
+
+## Data Science courses on Coursera
 
 **Introduction** - The "Introduction to Data Science in Python" class on Coursera
 
