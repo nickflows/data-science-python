@@ -1,4 +1,4 @@
-Optional - Unsupervised Learning
+# Optional - Unsupervised Learning
 
 Unsupervised Learning involves tasks that operate on datasets without labeled responses or target values. The goal is to capture the structure and information.
 
@@ -19,7 +19,6 @@ Two major categories of unsupervised methods:
 * Density Estimation - Probability of observing a measurement at a specific point
 	- Kernal density class to do kernal density estiamtion
 	- Distribution over likelihood of a class
-* 
 
 
 
@@ -115,8 +114,3 @@ plot_labelled_scatter(X, cls_assignment,
 - Parameters:
 	- `eps`
 	- `min_samples`
-
-
-
-
-
