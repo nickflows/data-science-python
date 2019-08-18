@@ -1,4 +1,3 @@
-
 ## Week 2 - Introduction to Supervised Machine Learning
 
 
