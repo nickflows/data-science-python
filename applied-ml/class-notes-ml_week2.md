@@ -15,14 +15,14 @@ For Regression, the target value is continuous (floating point / real-valued)
 
 
 
-Focus on two types of algorithms:
+*Focus on two types of algorithms*:
 - K-nearest neighbors: makes few assumptions about the structure of the data, and give potentially accurate but sometimes unstable results.
 - Linear model fit using least-squares: makes strong assumptions about the structure of data, and gives stable but potentially inaccurate results.
 
 
 ### Generalization, Overfitting, and Underfitting
 
-- Generalization - algorithm's ability to give accurate predictions for new, previously unseen data
+- *Generalization*: algorithm's ability to give accurate predictions for new, previously unseen data
 - Assumptions
   -- Future unseen data (test set) will have the same properties as the current training sets (drawn from the same population)
 
@@ -34,7 +34,7 @@ Focus on two types of algorithms:
 
 ### K-Nearest Neighbors: Classification & Regression
 
-Classification: Given a training set X_Train withb labels y_train, and given a new instance x_test to be classified:
+*Classification*: Given a training set X_Train withb labels y_train, and given a new instance x_test to be classified:
 
 1. Find the most similar instances (X_NN) to x_test that are in X_train
 2. Get the labels for y_NN for the instances in X_NN
@@ -42,17 +42,17 @@ Classification: Given a training set X_Train withb labels y_train, and given a n
 
 
 
-Regression: The R^2 (R-squared) regression score:
+*Regression*: The R^2 (R-squared) regression score:
 - Measures how well a prediction model for regression fits the given data
 - The score is between 0 and 1
 	- A value of 0 corresponds to a constant prediction of the mean value of all the training targets
 	- A value of 1 corresponds to a perfect prediction
 
 
-Model Complexity:
+*Model Complexity:*
  - `n_neighbors`: - number of nearest neighbors (k)
 
-Model Ftting:
+*Model Ftting:*
 - `metric`: distance function between points (note: default euclidean setting works well for most datasets)
 
 
@@ -60,14 +60,15 @@ Model Ftting:
 
 #### Linear Regression
 
-- Definition: a linear model is a sum of weighted variables that predicts a target output value given an input instance (e.g. predicting housing prices)
+*Definition: Linear Model*
+- a linear model is a sum of weighted variables that predicts a target output value given an input instance (e.g. predicting housing prices)
 - input instance - feature vector: x = {x0, x1, ... , xn}
 - Predicted Output - y = w0x0 + w1x1 + ... + wnxn + b
 - Parameters to estimate:
 	- w(hat) = (w0, ..., wn)
 	- b(hat) = bias term or intercept
 
-Definition: Ordinary Least Squares
+*Definition: Ordinary Least Squares*
 - Finds the w and b that minimizes the mean squared error of the model (i.e. the sum of the squared differences b/w target and actual values)
 - No parameters to control model complexity (except # of features)
 - Finds the values of w and b that minimizes the sum of squared differences (RSS or residual sum of squares) b/w predicted and actual values (ALA mean square error)
@@ -76,7 +77,7 @@ The learning algorithm finds the parameters (w, b) that optimize an objective fu
 
 Note: underscores indicate values that were learned from training data (not set by the user)
 
-Code Snippet
+*Code Snippet*
 ```
 from sklearn.linear_model import LinearRegression
 X_train, X_test, y_train, y_test = train_test_split(X_R1, y_R1,random_state = 0)
@@ -93,7 +94,7 @@ linreg.coef_
 - Ridge regression uses L2 Regularization: minimize sum of squares of w entries
 - The influence of the regularization term is controlled by the alpha parameter. Higher alpha means more regularization and simplier models.
 
-Code Snippet
+*Code Snippet*
 ```
 from sklearn.linear_model import Ridge
 linridge = Ridge(alpha=20.0).fit(X_train, y_train)
@@ -113,7 +114,7 @@ linridge = Ridge(alpha=20.0).fit(X_train, y_train)
 	- Do not scale the training set and test sets using different scalers: this could lead to random skew in data
 	- Do not fit the scaler using any part of the test set
 
-Code Snippet
+*Code Snippet*
 ```
 from sklearn.preprocessing import MinMaxScaler
 scaler = MinMaxScaler()
@@ -204,14 +205,14 @@ clf = LinearSVC().fit(X_train, y_train)
 	- Example: transform the data by adding a 2nd dimension/feature. vi = (xi, xi^2)
 
 
-Definition: a kernal is a similarity measure (modified dot product) between data points
+*Definition*: a kernal is a similarity measure (modified dot product) between data points
 
 
-Definition: Radio Basis Function (RBF) Kernal
+*Definition*: Radio Basis Function (RBF) Kernal
 - K (x, x') = exp [ - y * || x - x'||^2]
 
 
-Model Complexity:
+*Model Complexity*:
 - Kernal: type of kernal function to be used
 - Kernal Parameters:
 	- gamma: RBF kernal width
@@ -269,15 +270,8 @@ from sklearn.model_selection import train_test_split
 clf = DecisionTreeClassifier().fit(X_train, y_train)
 ```
 
-Feature Importance
+*Feature Importance*
 - Can be used to determine which of the features are most relevant to classifying the data
 
 ```clf.feature_importances_
 ```
-
-
-
-
-
-
-
