@@ -1,6 +1,8 @@
-# Introduction to Portfolio Construction and Analysis with Python 
+# Introduction to Portfolio Construction w/ Python
 
 ## Week 1 - Class Notes
 
+### 
 
+- 
 
