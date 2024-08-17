@@ -32,7 +32,44 @@ $' R_{t,t+2} = \left(1 + R_{t,t+1}\right)\left(1 + R_{t+1,t+2}\right) - 1 '$
 + Take the per period return and take the product for the number of periods
 
 
-### Fundamentals of Return
+### Measures of Risk and Reward
+
+
+#### Volatility - Standard Deviation and Variance
++ A volatile series will deviate off of the mean more significantly
+
+
+Variance:
++ Variance is the average of the square of the returns
+$' \sigma_R^2 = \frac{1}{N} \sum_{i=1}^{N} \left( R_i - \bar{R} \right)^2 '$
+
+Standard Deviation:
++ Standard Deviation is the square root of the variance --> easier to interpret for understanding prices changes in the market
+
+$' \sigma_R = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left( R_i - \bar{R} \right)^2} '$
+
++ Note: We cannot compare the variation of daily data to monthly data and vice versa
+
+Annualized Volatility:
+$' \sigma_{\text{ann}} = \sigma_p \sqrt{p} '$
++ p is the number of periods
++ sigma is the variance
+
+
+
+#### Risk-Adjusted Measures
+
++ Return on Risk Ratio = Return / Volatility
++ We should look at its **excess return** over the risk free rate
++ Excesss Return = Return over the Risk Free Rate = Return - Risk Free Rate
+
+
+
+
+
+
+
+
 
 
 
