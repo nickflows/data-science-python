@@ -37,6 +37,8 @@ range(5,10)[-1]
 Refereshers for Pandas library in python from this youtube video (https://www.youtube.com/watch?v=5rNu16O3YNE)
 
 
-### 
+# Introduction to Numerical Computing in Python
+
+##
 
 

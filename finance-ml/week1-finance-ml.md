@@ -64,8 +64,15 @@ $' \sigma_{\text{ann}} = \sigma_p \sqrt{p} '$
 + Excesss Return = Return over the Risk Free Rate = Return - Risk Free Rate
 
 
+**Sharpe Ratio:** (Return - Risk Free Rate) / Volatility
+
+$' \text{Sharpe Ratio}(P) = \frac{R_p - R_f}{\sigma_p} '$
 
 
+#### Max Drawdown
+
++ Max Drawdown focuses on the downside risk (instead of the volatility, which measures both upside and downside)
++ Max Drawdown is the maximum 
 
 
 
