@@ -74,6 +74,9 @@ $' \text{Sharpe Ratio}(P) = \frac{R_p - R_f}{\sigma_p} '$
 + Max Drawdown focuses on the downside risk (instead of the volatility, which measures both upside and downside)
 	+ Risk as the possibility of losing money
 + Max Drawdown is the maximum loss you could have had. Buying at the peak and selling at the bottom over some time period (i.e., bought high; sold low)
++ Converting a return series to max drawdown
+	+ Wealth Index: hypothetical buy and hold in the asset over some time period
+	+ 
 + 
 
 
