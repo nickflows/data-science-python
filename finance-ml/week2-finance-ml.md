@@ -24,8 +24,9 @@
 + Semi Deviation: Volatility of the sub-sample of below average or below zero returns
 
 
-+ \sigma_{\text{semi}} = \sqrt{\frac{1}{N} \sum_{R_t \leq \bar{R}} (R_t - \bar{R})^2}
-	+ where N is the number of returns that fall below the mean
+$' \sigma_{\text{semi}} = \sqrt{\frac{1}{N} \sum_{R_t \leq \bar{R}} (R_t - \bar{R})^2} '$
+
+where N is the number of returns that fall below the mean
 
 
 + Value at Risk (VaR)
@@ -35,8 +36,8 @@
 
 + Conditional Value at Risk (VaR)
 	+ Expected Loss Beyond VaR
-	+ CVaR = - E(R \mid R \leq -VaR) = \frac{-\int_{-\infty}^{-VaR} x \cdot f_R(x) \,dx}{F_R(-VaR)}
-	
+$' CVaR = - E(R \mid R \leq -VaR) = \frac{-\int_{-\infty}^{-VaR} x \cdot f_R(x) \,dx}{F_R(-VaR)} '$
+
 
 
 
