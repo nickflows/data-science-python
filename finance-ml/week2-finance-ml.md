@@ -36,6 +36,7 @@ where N is the number of returns that fall below the mean
 
 + Conditional Value at Risk (VaR)
 	+ Expected Loss Beyond VaR
+
 $$ CVaR = - E(R \mid R \leq -VaR) = \frac{-\int_{-\infty}^{-VaR} x \cdot f_R(x) \,dx}{F_R(-VaR)} $$
 
 
