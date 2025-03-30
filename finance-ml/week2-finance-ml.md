@@ -60,6 +60,47 @@ $$ \tilde{z}_{\alpha} = z_{\alpha} + \frac{1}{6} (z_{\alpha}^2 - 1) S + \frac{1}
 $$ VaR_{\text{mod}} (1 - \alpha) = -(\mu + \tilde{z}_{\alpha} \sigma) $$
 
 
+## Week 2 - Introduction to Optimization & Efficient Fronteir
+
+### Mean-Variance Framework
++ Single Period Framework (X-Axis: Risk; Y-Axis: Return)
++ Simple 2-Asset Portfolio
+	+ What is the Risk/Return of the Combination of the Two Assets (A&B)
+	+ E.g., 50% in A and 50% in B
++ Return on a Portfolio: Weighted Average of the Components of the Portfolio
++ Risk of a Portfolio: Cannot take a Weighted Average of A & B (due to the correlation between A and B)
+	+ More de-correlated the assets are, the less the volatility of the combination will be.
+
++ Portfolio Risk:
+$$
+\sigma^2(w_a, w_b) = \sigma_A^2 w_A^2 + \sigma_B^2 w_B^2 + 2 w_A w_B \sigma_A \sigma_B \rho_{A,B}
+$$
+
+
+### Markowitz Optimization & Efficient Frontier
++ With 3 assets, you can construst a portfolio over a region of space in (X,Y) plane
++ Efficient Frontier - Want to be on the edge of the Risk/Return region that maximizes return or minimizes risk (when constructing portfolios from some number of assets N)
+
+### Convex Optimization to Draw Efficient Frontier
++ Given a set of Asset Return Volatilities and Correlations, plot the efficient frontier
++ Expressions for the Return & Volatility for a Portfolio
+
++ Return on Portfolio:
+$$
+R_p = \sum_{i=1}^{k} w_i R_i
+$$
+
++ Generalized Volatility of N Assets: 
+$$
+\sigma_p^2 = \sum_{i=1}^{k} \sum_{j=1}^{k} w_i w_j \sigma_i \sigma_j \rho_{ij}
+$$
+
+
++ Portfolio Variance from Covariances of Assets:
+$$
+\sigma_p^2 = \sum_{i=1}^{k} \sum_{j=1}^{k} w_i w_j \sigma_{ij}
+$$
+
 
 
 
