@@ -35,9 +35,12 @@ $$
 + Properties of Dot Product:
 	+ Commutative
 	+ Distributive over addition:
-		+ $$ r(s+t) = r * s + r * t $$
+
+$$ r(s+t) = r * s + r * t $$
+
 	+ Associative over scalar multiplication:
-		+ $$ r*(a * s) = a(r * s) $$
+
+$$ r*(a * s) = a(r * s) $$
 
 + Vector Size:
 
