@@ -51,7 +51,9 @@ $$
 
 + Cosine Rule and Dot Product:
 
-$$c^2 = a^2 + b^2 - 2*a*b*\cos\theta$$
+$$
+c^2 = a^2 + b^2 - 2ab\cos\theta
+$$
 
 $$
 \mathbf{r} \cdot \mathbf{s} = \|\mathbf{r}\| \|\mathbf{s}\| \cos\theta
