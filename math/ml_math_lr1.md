@@ -35,9 +35,9 @@ $$
 + Properties of Dot Product:
 	+ Commutative
 	+ Distributive over addition:
-		+ r(s+t) = r * s + r * t
+		+ $$ r(s+t) = r * s + r * t $$
 	+ Associative over scalar multiplication:
-		+ r*(a * s) = a(r * s)
+		+ $$ r*(a * s) = a(r * s) $$
 
 + Vector Size:
 
@@ -48,9 +48,7 @@ $$
 
 + Cosine Rule and Dot Product:
 
-$$
-c^2 = a^2 + b^2 - 2*a*b*\cos\theta
-$$
+$$c^2 = a^2 + b^2 - 2*a*b*\cos\theta$$
 
 $$
 \mathbf{r} \cdot \mathbf{s} = \|\mathbf{r}\| \|\mathbf{s}\| \cos\theta
