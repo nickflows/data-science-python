@@ -59,6 +59,14 @@ $$
 \mathbf{r} \cdot \mathbf{s} = \|\mathbf{r}\| \|\mathbf{s}\| \cos\theta
 $$
 
+Properties of Vectors:
++ If the two vectors are orthogonal to each, the dot product is equal to 0
++ If the two vectors are parallel to each other, the dot product is positive
++ If the two vectors are opposite to each other, the dot product is negative
+
+
+##  Vector Projection
+
 
 
 

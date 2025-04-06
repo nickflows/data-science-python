@@ -72,6 +72,7 @@ $$ VaR_{\text{mod}} (1 - \alpha) = -(\mu + \tilde{z}_{\alpha} \sigma) $$
 	+ More de-correlated the assets are, the less the volatility of the combination will be.
 
 + Portfolio Risk:
+
 $$
 \sigma^2(w_a, w_b) = \sigma_A^2 w_A^2 + \sigma_B^2 w_B^2 + 2 w_A w_B \sigma_A \sigma_B \rho_{A,B}
 $$
@@ -86,21 +87,45 @@ $$
 + Expressions for the Return & Volatility for a Portfolio
 
 + Return on Portfolio:
+
 $$
 R_p = \sum_{i=1}^{k} w_i R_i
 $$
 
 + Generalized Volatility of N Assets: 
+
 $$
 \sigma_p^2 = \sum_{i=1}^{k} \sum_{j=1}^{k} w_i w_j \sigma_i \sigma_j \rho_{ij}
 $$
 
 
 + Portfolio Variance from Covariances of Assets:
+
 $$
 \sigma_p^2 = \sum_{i=1}^{k} \sum_{j=1}^{k} w_i w_j \sigma_{ij}
 $$
 
+
+
++ Find the Efficient Frontier (Optimization Problem): 
+
+$$
+\text{Minimize: } \frac{1}{2} \mathbf{w}^\top \boldsymbol{\Sigma} \mathbf{w}
+$$
+
+**Subject to:**
+
+$$
+\mathbf{w}^\top \mathbf{R} = r_0
+$$
+
+$$
+\mathbf{w}^\top \mathbf{1} = 1
+$$
+
+$$
+\mathbf{w} \geq \mathbf{0}
+$$
 
 
 
